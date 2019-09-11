@@ -18,3 +18,8 @@
     color: white;
     background-color: rgb(0, 77, 201);
 }
+
+.block {
+    display: block;
+    margin-bottom: 15px;
+}
