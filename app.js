@@ -11,12 +11,9 @@ const express          = require('express'),
       flash            = require('connect-flash');
                          require('dotenv/config');
 
-
 const restaurantRoutes = require('./routes/restaurants'),
       commentRoutes    = require('./routes/comments'),
       indexRoutes      = require('./routes/index');
-
-// seedsDB();
 
 // Passport Configuration 
 app.use(require('express-session')({
