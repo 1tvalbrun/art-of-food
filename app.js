@@ -44,7 +44,7 @@ app.use('/restaurants/:id/comments', commentRoutes);
 app.set('view engine', 'ejs');
 
 // Connect to Mongo
-mongoose.connect(process.env.DB_connection, {useNewUrlParser: true})
+mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true})
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
 
