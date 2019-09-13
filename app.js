@@ -8,8 +8,9 @@ const express          = require('express'),
       User             = require('./models/User'),
       Comment          = require('./models/Comment'),
       methodOverride   = require('method-override'),
-      flash            = require('connect-flash'),
-      seedsDB          = require('./seeds');
+      flash            = require('connect-flash');
+                         require('dotenv/config');
+
 
 const restaurantRoutes = require('./routes/restaurants'),
       commentRoutes    = require('./routes/comments'),
@@ -46,8 +47,7 @@ app.use('/restaurants/:id/comments', commentRoutes);
 app.set('view engine', 'ejs');
 
 // Connect to Mongo
-const db = require('./config/keys').mongoURI;
-mongoose.connect(db, {useNewUrlParser: true})
+mongoose.connect(process.env.DB_connection, {useNewUrlParser: true})
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
 
